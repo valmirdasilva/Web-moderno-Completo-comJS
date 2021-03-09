@@ -8,7 +8,7 @@ console.log(escola.charCodeAt(3))
 // indexOf pega a posição em que o caractere está dentro da variável seu indice
 console.log(escola.indexOf('3'))
 // PODE SUBSTITUIR UMA LETRA ou NOME ESPECIFICO DENTRO DA VARIÁVEL
-console.log(escola.replace(3, 'e'))
+console.log(escola.replace(3, 'aa'))
 // ESCOLHE EM QUAL INDICE VAI SE INICIAR A LEITURA E ONDE PODE TERMINAR
 console.log(escola.substring(1))
 console.log(escola.substring(0, 3))
