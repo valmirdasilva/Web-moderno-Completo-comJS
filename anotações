@@ -71,6 +71,55 @@ console.log('ana,maria,pedro'.split(',')) = pega está sequencia de nomes e mont
 ['ana', 'maria','pedro']
 
 =============================================================================================================================
+TEMPLATE STRINGS
+Para iniciar uma template strings é usado crase ``
+ex: const nome = 'Rebeca'
+const template = `Olá ${nome}!`
+console.log(`${template}`) - resposta = Olá Rebeca!
+template string permite quebra de linha na exibição.
+
+ARROW FUNCTION e UPPERCASE
+Na função a baixo está sendo criado uma constante up com o valor text e com uma arrow function => está sendo atribuido a texto o toUpperCase ele deixa as letras maisculas
+const up = texto => texto.toUpperCase()
+console.log(`Ei... ${up('cuidado')}!`) -- resultado = Ei... CUIDADO!
+
+=============================================================================================================================
+TIPO BOOLEAN
+O que é um boolen? são valores expressados como TRUE OR FALSE
+Ex:
+isAtivo = true --> isto é um valor boolean
+
+EXPRESSANDO BOOLEAN EM NÚMEROS
+isAtivo = 1
+console.log(!!isAtivo) --> com negação se consegue expressar valores boolean através de números
+
+LISTA DE BOOLEAN VERDADEIROS
+console.log(!!3)
+console.log(!!-1)
+console.log(!!' ')
+console.log(!!'texto')
+console.log(!!'[]')
+console.log(!!{})
+console.log(!!Infinity)
+console.log(!!(isAtivo = true))
+
+LISTA DE BOOLEAN FALSOS
+console.log(!!0)
+console.log(!!'')
+console.log(!!null)
+console.log(!!NaN)
+console.log(!!undefined)
+console.log(!!(isAtivo = false))
+
+CURIOSIDADES
+console.log(!!('' || null || 0 || 'oi')) = 'oi' -- na sequencia só retornou oi por que antes do oi todos os valores eram false   
+
+O BOOLEAN SEMPRE VAI BUSCAR PELO TRUE 
+Ex: let nome = ''
+console.log(nome || 'Desconhecido') = 'Desconhecido' --> como o nome estava vazio ele era um boolean false, assim com a condição ele achou a string que é considerado TRUE e exibiu como resposta
+
+
+=============================================================================================================================
 ARRAY: typeof -- objeto
 O que é um array? array é uma forma de agrupar multiplos valores de uma forma linear, um após o outro.
 ex: 
@@ -110,5 +159,18 @@ const teste {}
     teste.idade:'30'
 AMBAS AS FORMAS EXIBEM O MESMO RESULTADO   
 console.log(teste) = {nome:'joão',idade:'30'}
+
+============================================================================================================================= 
+NULL E UNDEFINED
+O que é null? É a ausência de valor ela não recebe e nem aponta para lugar nenhum
+O que é undefined? É quando não é atribuido nada a váriavel o valor fica undefined
+
+undefined ex:
+let valor 
+console.log(valor) = undefined  -- pela varivel estar sem nada atribuido a resposta é undefined
+
+null ex:
+let valor = null 
+console.log(valor) = null -- aqui  foi inicializado e  atribuido o valor null. Mas null não aponta para lugar nenhum, fica sem valor e sem endereço para apontar
 
 ============================================================================================================================= 
