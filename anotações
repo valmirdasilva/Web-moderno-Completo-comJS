@@ -1,0 +1,114 @@
+NOME OFICIAL DO JS = ECMASCRIPT
+
+=============================================================================================================================
+BÁSICO DE VAR, LET E CONST
+declaração de variável
+ex: var a = 3  | let a = 3 
+declaração de constantes
+ex: const a = 3
+
+=============================================================================================================================
+TIPAGEM FRACA
+JavaScript possui uma tipagem dinamica, que é considerado fracamente tipada
+ex: 
+let qualquer = 'teste' -- no momento ele é tipo string
+
+let qualquer = '123' -- agora ele já atribui um novo valor do tipo number
+Isto é considerado uma tipagem fraca
+
+=============================================================================================================================
+TIPO NUMBER
+formas de atribuir numbers a uma variável
+const peso1 = 1.0
+const peso2 = Number('2.2')
+
+isInterger VERIFICA SE O VALOR É INTEIRO OU NÃO, RETORNANDO TRUE OR FALSE
+console.log(Number.isInterger(peso1)) = TRUE
+como peso1 é 1.0 ele retorna TRUE é um valor inteiro
+
+console.log(Number.isInterger(peso2)) = FALSE
+como peso2 é 2.2 ele retorna FALSE é um valor quebrado com ponto flutuante
+
+TOFIXED()
+let media = 9.871101010
+ex: console.log(media.toFixed(2)) = 9.87 -- você pode delimitar as casas decimais para exibir
+
+TOSTRING()
+console.log(media.toString(2)) -- você pode converter o valor da variavel media em um valor binario
+
+NUMBER ALGUNS CUIDADOS
+console.log(7 / 0) = Está operação vai lhe retornar valor infinito
+console.log("10" / 2) = A operação é executada pois mesmo o 10 sendo string o operador reconhece e faz a divisão o resultado vem 5
+console.log("Show" * 2) = O retorno é um  NaN o operador não reconhece o Show como um number e não executa a multiplicação
+console.log(0.1 + 0.7) = retorna um valor aproximado mas não exato, por questões de desempenho exato iria demorar para executar
+console.log(10.toString()) = retorna um erro, a função executa number mas não em sua forma literal.
+console.log((10.345).toFixed(2)) = a operação é realizada desta forma a função é exeucatada resultado 10.34
+
+=============================================================================================================================
+API DO JS MATH  -- é um objeto
+Ele serve para fazer operações de exponenciação
+ex: 
+const raio = 5.6
+const area = Math.PI * Math.pow(raio, 2)
+console.log(area) = 98.5203456165759 
+com este comando ele já executa a conta de exponenciação sem nenhuma dificuldade e mais rápido.
+
+=============================================================================================================================
+TIPO STRING
+FUNÇÕES DENTRO DAS STRINGS
+ex:
+const escola = "Cod3r" -- constante usada de exemplo
+
+console.log(escola.charAt(4)) = ele busca pelo indice e retorna o caractere que está na posição 4 que seria o 'r'
+console.log(escola.charAt(5)) = procurando um indice que não existe, ele retorna vazio
+console.log(escola.charCodeAt(3)) = Ele pega este valor e retorna o valor real HTML buscado na tabela unicode
+console.log(escola.indexOf(d)) = Está função pega o caractere selecionado e retorna o indice do local que seria 2
+console.log(escola.substring(1)) = Vai exibir a partir do indice 1 assim resultado sendo Od3r
+console.log(escola.substring(0.3)) = Vai exibir a partir do indice 0 e limitando até o 3 assim resultado fica Cod 
+console.log(`Escola ${escola}!`) = Está sendo concatenado para exibir "Escola cod3r!"
+console.log(escola.replace(3, 'e')) = Pega um caractere dentro da variável ou constante e muda resultado "Coder"
+console.log('ana,maria,pedro'.split(',')) = pega está sequencia de nomes e monta em um array resultado
+['ana', 'maria','pedro']
+
+=============================================================================================================================
+ARRAY: typeof -- objeto
+O que é um array? array é uma forma de agrupar multiplos valores de uma forma linear, um após o outro.
+ex: 
+const valores = [7.7, 8.9, 6.3, 9.2] = um array
+
+CAPTURAR O INDICE EM ESPECIFICO
+console.log(valores[3]) - resposta = 9.2
+
+selecionando o indice pode se adicionar novos valores dentro do array
+valore[4] = 10 ---- console.log(valores) = [7.7, 8.9, 6.3, 9.2, 10]
+
+FUNÇÃO PUSH()
+valores.push(false, null, 'teste') => com push você pode adicionar novos valores no array criando mais indices.
+valores.push(false, null, 'teste') -- console.log(valores)
+[7.7, 8.9, 6.3, 9.2,false, null, 'teste']
+
+FUNÇÃO POP()
+tira o ultimo valor do array -- ex: console.log(valores.pop())
+[7.7, 8.9, 6.3, 9.2,false, null] - teste sendo o ultimo do array foi sacado para fora.
+
+FUNÇÃO DELETE
+também tira algum valor do array mas pode selecionar pelo indice.
+ex: delete valores[0] --- console.log(valores)
+[<1 empty item>, 8.9, 6.3, 9.2,false, null] "empty item só aparece por que logo após o indice 0 tem mais valores então o console retorna dizendo que a casa esta vazia e continua a sequencia",
+
+=============================================================================================================================
+OBJETO:
+O que é um objeto? objeto é um grupo de chaves e valores, onde se atribui valores a estas chaves como inteiros, reias, boolean.
+ex: const teste {
+    nome:'joão'
+    idade:'30'
+}
+console.log(teste) = {nome:'joão',idade:'30'}
+
+const teste {}
+    teste.nome:'joão'
+    teste.idade:'30'
+AMBAS AS FORMAS EXIBEM O MESMO RESULTADO   
+console.log(teste) = {nome:'joão',idade:'30'}
+
+============================================================================================================================= 
