@@ -174,3 +174,206 @@ let valor = null
 console.log(valor) = null -- aqui  foi inicializado e  atribuido o valor null. Mas null não aponta para lugar nenhum, fica sem valor e sem endereço para apontar
 
 ============================================================================================================================= 
+FUNÇÕES
+
+console.log(typeof Object) = FUNCTION -- Object é uma função
+class Produto {}
+console.log(typeof Produto) = FUNCTION -- class é uma função
+
+EXEMPLOS BÁSICOS DE FUNÇÕES
+UMA FUNÇÃO SEM RETORNO
+function imprimirSoma(a, b) { --> Dentro dos parentes estão os parametros da função
+    console.log(a + b)
+} 
+
+ImprimirSoma(2, 3) = 5 --> Chamando a função que está somando o "a + b se tornam 2+3" assim executando a soma dos parametros
+ImprimirSoma(2) = NaN --> Ele tenta somar um valor INT com UNDEFINED assim retorna NaN
+ImprimirSoma() = NaN --> Passar a função sem parametros, executa mas retorna um NaN
+
+UMA FUNÇÃO COM RETORNO
+function soma(a, b = 0) {
+    return a + b -- está fazendo o retorno da função
+}
+
+console.log(soma(2, 3)) = 5 --> está chamando a função soma com os parametros
+
+ARMAZENANDO UM FUNÇÃO EM UMA VARIÁVEL
+
+const imprimirSoma = function (a, b) { --> Isto é uma função oculta
+    console.log(a + b) 
+}
+imprimirSoma(2, 3) = 5 --> com a função oculta está chamando a constante imprimirSoma com os parametros da função a + b que são 2, 3
+
+ARMAZENANDO UMA FUNÇÃO ARROW EM UMA VARIAVEL
+const soma = (a, b) => {
+    return a + b
+}
+console.log(soma(2, 3))
+
+// retorno implícito
+const subtracao = (a,b) => a-b
+
+console.log(subtracao(2, 3))
+
+=============================================================================================================================
+DECLARAÇÃO DE VARIÁVEIS COM VAR
+
+{
+    {
+        {
+            { 
+                var sera = 'Será' // EM BLOCOS VAR FUNCIONA COMO UMA VARIAVEL GLOBAL ASSIM PODENDO SER PEGA DE QUALQUER LUGAR
+                console.log(sera)
+            }
+        }
+    }
+}
+console.log(sera)
+
+function teste() {
+    var local = 123 // VAR DENTRO DE UMA FUNÇÃO FICA DENOMINADA A ESTE ESCOPO ENTÃO NÃO PODE SER CHAMADA DE FORA
+}
+
+teste() = está exibindo a função quando dentro tem o console.log 
+console.log(local) = ERRO //IMPRIMIU ERRO POR QUE VAR DENTRO DE UMA FUNCTION NÃO PODE SER CHAMADA DE FORA
+
+EXEMPLO 2
+
+var numero = 1
+{
+    var numero = 2
+    console.log('dentro=', numero) = dentro= 2
+}
+console.log('fora=', numero) fora= 2 NA VARIAVEL VAR NÃO EXISTE ESCOPO DE BLOCO, ASSIM SEMPRE QUANDO DECLARAR ALGO NO BLOCO VIRA GLOBAL 
+
+
+DECLARAÇÃO DE VARIÁVEIS COM LET
+
+var numero = 1
+{
+    let numero = 2
+    console.log('dentro=', numero)
+}
+console.log('fora=', numero)
+COMO A VARIAVEL LET DIFERENCIA BLOCOS ELA ACABA DIFERENCIANDO OS BLOCOS E OS VALORES SÃO APLICADOS CORRETAMENTE SENDO 2 SOMENTE DE UM BLOCO ESPECIFICO
+
+=============================================================================================================================
+USANDO VAR EM LOOP
+
+ESTA EXPRESÃO ESTÁ FORMANDO UM LOOP 'FOR = se'| 'var i = 0' está criando uma variavel chamada 'i' e atribuindo o valor '0' |
+em 'i < 10' está sendo adicionado uma condição que se 'i' for '< = menor' que '10' | 'i++' será acrescentado a 'i' '++' 0 + 1
+assim até fechar o loop 
+for (var i = 0; i < 10; i++) {
+    console.log(i)
+}
+USANDO LET EM LOOP
+
+COM A EXPRESSÃO LET O LOOP VAI SER IGUAL
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+MAS ESTE CONSOLE VAI DAR ERRO JÁ QUE O LET SÓ FUNCIONA DENTRO DO ESCOPO DO BLOCO
+console.log('i=', i)
+
+=============================================================================================================================
+FUNÇÃO VS OBJETO
+
+// FUNÇÃO
+console.log(typeof Object)
+// OBJETO
+ console.log(typeof new Object)
+// FUNÇÃO
+const Cliente = function() {}
+console.log(typeof Cliente)
+// OBJETO
+console.log(typeof new Cliente)
+// FUNÇAO
+class Produto {} // ES 2015 (ES6)
+console.log(typeof Produto)
+// OBJETO
+console.log(typeof new Produto)
+
+=============================================================================================================================
+PAR NOME / VALOR
+const saudacao = 'Opa' // contexto léxico 1
+
+function exec() {
+    const saudacao = 'Fala' // contexto léxico 2
+    return saudacao
+}
+// Objetos são grupos aninhados de pares nome/valor
+const cliente = {
+    nome: 'Pedro',
+    idade: 32,
+    peso: 90,
+    endereco: {
+        logradouro: 'Rua Muito Legal',
+        numero: 123
+    }
+}
+
+console.log(saudacao) = 'Opa' -- Vai exibir a constante que está no escopo de fora pois está chamando a constante e não função
+console.log(exec()) = 'Fala' -- Vai exibir a constante dentro da function que está retornando a atribuição 'Fala'
+console.log(cliente) -- Vai retornar a lista dentro do objeto já que tudo está dentro da constante cliente
+
+=============================================================================================================================
+NOTAÇÃO PONTO
+
+console.log(Math.ceil(6.1))
+
+const obj1 = {}
+obj1.nome = 'Bola'
+console.log(obj1.nome)
+
+function Obj(nome) {
+    this.nome = nome 
+    O QUE 'this' FAZ O NOME ASSOCIADO AO OBJETO DA FUNÇÃO ELE FICA VISIVEL PARA SER INSTÂNCIADO 
+    this.exec = function () {
+        console.log('exec...')
+        DESTE MODO ESTÁ INSTANCIANDO COM O 'this' PARA TORNAR DISPONIVEL PUXAR O ATRIBUTO QUE TEM DENTRO PARA FORA
+    }
+}
+
+const obj2 = new Obj('Cadeira')
+const obj3 = new Obj('Mesa')
+COM O 'this' TORNANDO DISPONIVEL O 'nome' DENTRO DA FUNCTION POSSO ASSIM ATRIBUIR NOVOS VALORES DA FUNCTION 'Obj'
+RESULTADOS A BAIXO 
+console.log(obj2.nome) = 'Cadeira'
+console.log(obj3.nome) = 'Mesa'
+obj3.exec() DESTE MODO NÃO PRECISA USAR O CONSOLE.LOG NA HORA DE PUXAR JÁ QUE DENTRO DA FUNÇÃO TEM
+
+=============================================================================================================================
+OPERADORES: DESTRUCTURING
+
+// novo recurso do ES2015
+
+const pessoa = {
+    nome: 'Ana',
+    idade: 5,
+    endereco: {
+        logradouro: 'Rua ABC',
+        numero: 1000
+    }
+}
+
+const {nome, idade } = pessoa 
+console.log(nome, idade) = Ana 5 -- COM O DESTRUCTURING ESTÁ PUXANDO AS INFORMAÇÕES 'nome, idade' DE DENTRO DA 'const pessoa' ASSIM EXIBINDO COM CONSOLE OS VALORES DE DENTRO DA CONST PESSOA
+
+const {nome: n, idade: i} = pessoa
+console.log(n, i)
+DESTE MODO ESTOU ATRIBUINDO NOVOS NOMES PARA AS VARIAVEIS.
+
+const { endereco: {logradouro, numero} } = pessoa
+DESTE MODO ESTA CENDO ACESSADO UM OBJETO DENTRO DA 'const pessoa' QUE SERÁ EXIBIDO NORMALMENTE
+
+function rand({min = 0, max = 1000}) {
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+NESTA FUNCTION COM OS PARAMETRO MIN E MAX E API MATH ELE ESTÁ DEIXANDO OS VALORES DE MODO ALEATÓRIO DELIMITANDO DE 0 A 1000
+
+const obj = { max: 50, min: 40}
+console.log(rand(obj)) // NESTE EXEMPLO ELE VAI GERAR VALORES ALEATÓRIOS ENTRE 50 E 40
+console.log(rand({min: 955})) GERA VALORES ALEATÓRIOS ENTRE 955 A 1000
+console.log(rand({})) VAI GERAR VALORES ALEATÓRIOS ENTRE 0 A 1000
+console.log(rand()) VAI DAR ERRO, JÁ QUE NÃO ESTÁ PASSANDO E NEM PEGANDO NENHUM PARAMETRO
