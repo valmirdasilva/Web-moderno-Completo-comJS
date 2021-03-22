@@ -363,7 +363,7 @@ const {nome: n, idade: i} = pessoa
 console.log(n, i)
 DESTE MODO ESTOU ATRIBUINDO NOVOS NOMES PARA AS VARIAVEIS.
 
-const { endereco: {logradouro, numero} } = pessoa
+const { idade, endereco: {logradouro, numero} } = pessoa
 DESTE MODO ESTA CENDO ACESSADO UM OBJETO DENTRO DA 'const pessoa' QUE SERÁ EXIBIDO NORMALMENTE
 
 function rand({min = 0, max = 1000}) {
