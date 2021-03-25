@@ -8,7 +8,7 @@ console.log(Math.floor(6.1)) // = 6
 const obj1 = {}
 obj1.nome = 'Bola'
 // obj1['nome'] = 'Bola2' // DESTE MODO É MAIS FLEXIVEL, MAS NÃO RECOMENDADO
-console.log(obj1)
+console.log(obj1.nome)
 
 function Obj(nome) {
     this.nome = nome

@@ -1,5 +1,5 @@
 // Este recurso foi atribuido no ES2015
-
+/*
 const pessoa = {
     nome: 'Ana',
     idade: 5,
@@ -20,4 +20,17 @@ const {sobrenome = 'silva', bemHumorada = 'sim'} = pessoa
 console.log(nome,sobrenome, bemHumorada)
 
 const { endereco: { logradouro, numero, cep}} = pessoa
-console.log(logradouro, numero, cep)
+console.log(logradouro, numero, cep) */
+
+const pessoa = {
+    nome:'teste',
+    casa:'grande',
+    carro:'musta',
+    endereco: {
+        log: 'Rua Teste',
+        number: '148'
+    },
+    teste: true
+}
+const {nome,casa, endereco: {log, number}, carro,teste} = pessoa
+console.log(nome, casa, number, carro, teste)
