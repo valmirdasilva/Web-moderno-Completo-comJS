@@ -1,24 +1,3 @@
-// EXERCICIO 1
-let nome2 = 'Maria'
-let nome = 'Leonardo'
-//EXIBIR NOME
-console.log(`Olá, ${nome}!`)
-console.log(`Olá, ${nome2}!`)
-
-// EXERCICIO 2
-//EXIBIR IDADE EM DIAS
-function converteAnos(idade) {
-    return idade * 365
-}
-console.log('Dias convertidos em idade = ' + converteAnos(20))
-
-// EXERCICIO 3
-//EXIBE SOMA DE HORA E TRABALHO
-function calcSalario(horas, hSalario) {
-    return horas * hSalario
-}
-console.log('Total do meu salário = '+ calcSalario(150, 40.5))
-
 //EXIBIR DIA DO MÊS COM NÚMERO
 /*let numero = 2
 if (numero == 1) {
@@ -92,11 +71,3 @@ const imprimirResultado = function(mes) {
     }
 }
 imprimirResultado(12)
-
-// EXERCICIO 4
-
-const boo = function(a, b) {
-    console.log(a <= b)
-}
-boo (0, 0)
-
