@@ -39,4 +39,4 @@ function recebe(filtro) {
         console.log(!filtro)
     }
 }
-recebe(1)
+recebe('teste')
