@@ -1,4 +1,4 @@
-// par = const | nome = saudacao | valor = 'Opa'
+/*/ par = const | nome = saudacao | valor = 'Opa'
 const saudacao = 'Opa'
 
 function exec() {
@@ -16,4 +16,11 @@ const cliente = {
 }
 console.log(saudacao)
 console.log(exec())
-console.log(cliente)
+console.log(cliente) */
+
+const teste = {
+    nome: 'Junior',
+    idade: 15
+}
+const{ nome, idade} = teste
+console.log(nome, idade)
